@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body{
+  background-color: #0D0D33;;
+}
+.rounded_svg {
+  filter: blur(200px);
+  background: linear-gradient(
+    to right,
+    #ff6161 0%,
+    #43ffdd 35.88%,
+    #45bcff 67.65%,
+    #d795ff 100%
+  );
+}
+blockquote::before,
+blockquote::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	width: 3rem;
+	height: 3rem;
+	content: "";
+	z-index: 0;
+	font-family: Georgia, Times, Garamond, serif;
+  display: none;
+}
+
+blockquote::before {
+	top: -6rem;
+	left: 0rem;
+  object-fit: contain;
+	content: url("/🦆\ icon\ _quote-left_.svg");
+}
+
+blockquote::after {
+	bottom: -6rem;
+	right: 0rem;
+	content: url("/🦆\ icon\ _quote-right_.svg");
+}
+.grid-container{
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  display: grid;
+   gap:10px;
+}
+.text-transparent{
+  color: transparent;
+}
+
+@keyframes loader-animation {
+  0% {
+    transform: translateX(60px);
+  }
+
+  25% {
+    transform: translateX(60px);
+  }
+
+  50% {
+    transform: translateX(-10px);
+  }
+
+  75% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(60px);
+  }
+}
+
+.animate-loader {
+  animation-name: loader-animation;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  animation-iteration-count: infinite;
+}
